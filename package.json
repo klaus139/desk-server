@@ -1,0 +1,21 @@
+{
+  "name": "desk-server",
+  "version": "1.0.0",
+  "description": "A server to teach deskon students",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "nodemon index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "klaus dev",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.21.1",
+    "mongoose": "^8.8.3",
+    "morgan": "^1.10.0",
+    "nodemon": "^3.1.7"
+  }
+}
