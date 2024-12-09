@@ -16,6 +16,8 @@ connectDB()
 
 const port = process.env.PORT;
 
+const gae = 30;
+
 //middleware
 
 app.use('/auth', authRoutes)
