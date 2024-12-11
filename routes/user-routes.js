@@ -1,13 +1,15 @@
 import express from "express"
+import { deleteUser, getAllUsers, getuser, updateUser } from "../controllers/userController.js"
 const router = express.Router()
-import { allUsers } from "../dummyData.js"
 
 
 
-router.get('/all', (req, res) => {
-    res.status(200).json({
-        allUsers
-    })
-})
+router.get('/all', getAllUsers)
+
+router.get('/:id', getuser)
+
+router.put('/:id', updateUser)
+
+router.delete("/:id", deleteUser)
 
 export default router
