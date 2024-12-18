@@ -52,7 +52,11 @@ const userSchema = new Schema({
   },
   phone: {
     type: Number,
-    required: true
+    
+  },
+  isVerified:{
+    type:Boolean,
+    default:false,
   },
   jobHistory: [jobHistorySchema],
   isAdmin: {
