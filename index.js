@@ -4,6 +4,7 @@ dotenv.config()
 import morgan from "morgan"
 import authRoutes from "./routes/auth-routes.js"
 import userRoutes from "./routes/user-routes.js"
+import jobRoutes from "./routes/job-routes.js"
 import { connectDB } from "./config/db.js"
 
 const app = express();
@@ -22,9 +23,7 @@ const gae = 30;
 
 app.use('/auth', authRoutes)
 app.use('/user', userRoutes);
-
-
-
+app.use("/job", jobRoutes);
 
 
 app.listen(port, () => console.log(`server is running on port ${port}`))

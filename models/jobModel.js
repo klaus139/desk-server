@@ -1,6 +1,8 @@
 import mongoose from "mongoose";
+const { Schema, model, Types } = mongoose;  // Destructuring to get Schema and Types from mongoose
 
-const jobSchema = new mongoose.Schema({
+
+const jobSchema = new Schema({
     title:{
         type:String,
         required:[true, "Title is required"]
@@ -8,6 +10,9 @@ const jobSchema = new mongoose.Schema({
     description:{
         type:String,
         required:[true, "Description is required"]
+    },
+    fulldetails:{
+        type:String,
     },
     companyName:{
         type:String,
@@ -18,7 +23,7 @@ const jobSchema = new mongoose.Schema({
     },
     salary:{
         type:String,
-        required:[true, "salary range is required"]
+       
     },
     available:{
         type:Boolean,
@@ -26,5 +31,14 @@ const jobSchema = new mongoose.Schema({
     },
     jobType:{
         type:String,
+    },
+    user: {
+        type: Types.ObjectId,  // Using Types.ObjectId for proper ObjectId reference
+        ref: "User",
+        required: true
     }
-})
+},{timestamps:true});
+
+const Job = model("Job",jobSchema)
+export default Job;
+

@@ -59,7 +59,7 @@ const userSchema = new Schema({
     type: Boolean,
     default: false
   }
-});
+},{timestamps:true});
 
 const User = model("User", userSchema);  // Using model to create User model
 export default User;
